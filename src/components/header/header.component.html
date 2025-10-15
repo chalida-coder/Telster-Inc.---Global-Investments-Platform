@@ -1,0 +1,55 @@
+<header class="sticky top-0 z-50 glassmorphic">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold font-heading text-white dark:text-white">
+      <a href="#">TELSTER</a>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center space-x-6 text-sm">
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Home</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Vehicles</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Energy</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Services</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Investments</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Membership</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Insights</a>
+      <a href="#" class="nav-link text-gray-300 hover:text-white">Support</a>
+    </div>
+
+    <div class="hidden lg:flex items-center space-x-4">
+      <a href="#" class="text-sm text-gray-300 hover:text-white transition duration-300">Broker Login</a>
+      <a href="#" class="bg-vip-gold text-graphite font-bold py-2 px-5 rounded-lg text-sm hover:bg-opacity-90 transition duration-300 ease-in-out">
+        Invest Now
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="lg:hidden">
+      <button (click)="toggleMenu()" class="text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  @if (isMenuOpen()) {
+    <div class="lg:hidden bg-graphite/95 dark:bg-graphite/95 absolute w-full">
+      <div class="flex flex-col items-center space-y-4 py-8">
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Home</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Vehicles</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Energy</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Services</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Investments</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Membership</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Insights</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Support</a>
+        <a href="#" class="text-lg text-gray-300 hover:text-white">Broker Login</a>
+        <a href="#" class="bg-vip-gold text-graphite font-bold py-3 px-8 rounded-lg text-lg mt-4 hover:bg-opacity-90 transition duration-300 ease-in-out">
+          Invest Now
+        </a>
+      </div>
+    </div>
+  }
+</header>

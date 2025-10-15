@@ -1,0 +1,38 @@
+<section id="investments" class="py-20 sm:py-28">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold font-heading text-white">Investment Opportunities</h2>
+      <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">AI-projected ROI metrics designed for strategic growth.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (plan of plans; track plan.name) {
+        <div class="glassmorphic rounded-lg overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300 ease-in-out group">
+          <img [src]="plan.imageUrl" [alt]="plan.name" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-white mb-2">{{ plan.name }}</h3>
+            <p class="text-vip-gold font-mono text-lg mb-2">{{ plan.investmentRange }}</p>
+            <div class="flex items-baseline mb-4">
+              <span class="text-4xl font-bold font-mono text-white">{{ plan.roi }}</span>
+              <span class="text-gray-400 ml-2">/ {{ plan.term }}</span>
+            </div>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              @for (benefit of plan.benefits; track benefit) {
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-vip-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  {{ benefit }}
+                </li>
+              }
+            </ul>
+            <a href="#" class="block w-full text-center bg-vip-gold text-graphite font-bold py-3 px-5 rounded-lg hover:bg-opacity-90 transition duration-300 ease-in-out">
+              Start Investment
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+    <p class="text-center text-gray-500 mt-8 text-sm">
+      Tooltip: ROI values are projected estimates; all investments carry risk.
+    </p>
+  </div>
+</section>

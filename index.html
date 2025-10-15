@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telster Inc | Unified Global Investments Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'graphite': '#2E2E2E',
+            'deep-teal': '#004F59',
+            'vip-gold': '#C8A94B',
+            'light-bg': '#F3F4F6',
+            'light-text': '#111827',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+            heading: ['Inter', 'sans-serif'], // Approximating Neue Haas Grotesk
+          },
+          backdropBlur: {
+            'xl': '24px',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .glassmorphic {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .light .glassmorphic {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/compiler": "https://next.esm.sh/@angular/compiler@^20.3.4?external=rxjs",
+    "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^20.3.4?external=rxjs",
+    "@angular/common/http": "https://next.esm.sh/@angular/common@^20.3.4/http?external=rxjs",
+    "@angular/common": "https://next.esm.sh/@angular/common@^20.3.4?external=rxjs",
+    "@angular/core": "https://next.esm.sh/@angular/core@^20.3.4?external=rxjs",
+    "@angular/forms": "https://next.esm.sh/@angular/forms@^20.3.4?external=rxjs",
+    "@google/genai": "https://next.esm.sh/@google/genai@^1.24.0?external=rxjs"
+  }
+}
+</script>
+</head>
+<body class="bg-graphite text-gray-200">
+  <app-root></app-root>
+</body>
+</html>
