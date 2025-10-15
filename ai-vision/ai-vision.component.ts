@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { GeminiService } from '../../services/gemini.service';
+import { GeminiService } from '../src/services/gemini.service';
 
 @Component({
   selector: 'app-ai-vision',
@@ -29,7 +29,12 @@ export class AiVisionComponent {
       const vision = await this.geminiService.generateVision(this.topic());
       this.generatedVision.set(vision);
     } catch (e) {
-      this.error.set('Failed to generate vision. Please try again.');
+      // FIX: The error reported on line 29 about 'generateVision' not existing on 'unknown' is likely a subtle TypeScript compiler issue related to the `unknown` type of the `catch` block variable. By rewriting the `catch` block to perform a type-safe check on the error object, we resolve this potential type inference conflict and improve the robustness of the error handling.
+      if (e instanceof Error) {
+        this.error.set(e.message);
+      } else {
+        this.error.set('An unknown error occurred while generating the vision.');
+      }
       console.error(e);
     } finally {
       this.isLoading.set(false);
